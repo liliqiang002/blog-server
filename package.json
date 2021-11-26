@@ -29,6 +29,7 @@
     "node": ">=10.0.0"
   },
   "scripts": {
+    "begin": "egg-scripts start --title=egg-server-blog-server --env=prod",
     "start": "egg-scripts start --daemon --title=egg-server-blog-server",
     "stop": "egg-scripts stop --title=egg-server-blog-server",
     "dev": "egg-bin dev",
