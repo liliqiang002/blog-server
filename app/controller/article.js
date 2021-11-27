@@ -9,7 +9,8 @@ class ArticleController extends Controller {
    */
   async add() {
     const { ctx } = this;
-    const res = await ctx.model.Article.create(ctx.request.body)
+    console.log(ctx.request.body, ctx.user)
+    const res = await ctx.model.Article.create({ ...ctx.request.body, user_id: ctx.user.id })
     ctx.body = { data: { data: res, code: 1, msg: '添加成功' } }
     ctx.status = 200;
   }

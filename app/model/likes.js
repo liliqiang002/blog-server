@@ -6,9 +6,8 @@ module.exports = app => {
   const Model = app.model.define('likes', {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      primaryKey: true,
-      autoIncrement: true
+      allowNull: false,
+      primaryKey: true
     },
     article_id: {
       type: DataTypes.INTEGER,

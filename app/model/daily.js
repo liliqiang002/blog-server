@@ -3,19 +3,11 @@
 module.exports = app => {
   const DataTypes = app.Sequelize;
 
-  const Model = app.model.define('article', {
+  const Model = app.model.define('daily', {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       primaryKey: true
-    },
-    category_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    tag_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -25,12 +17,12 @@ module.exports = app => {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    summary: {
+    type: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
     content: {
-      type: DataTypes.TEXT,
+      type: DataTypes.INTEGER,
       allowNull: true
     },
     created_at: {
@@ -42,7 +34,7 @@ module.exports = app => {
       allowNull: true
     }
   }, {
-    tableName: 'article'
+    tableName: 'daily'
   });
 
   Model.associate = function() {

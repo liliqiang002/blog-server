@@ -19,12 +19,17 @@ module.exports = app => {
   /**
    * 文章相关
    */
-  router.post('article', '/article/add', jwt, controller.article.add);
+  router.post('article', '/article/add', authentication, controller.article.add);
   router.get('article', '/article/list', controller.article.list);
   router.get('article', '/article/detail', controller.article.detail);
   router.post('article', '/article/like', authentication, controller.article.like);
 
   router.get('category', '/category/list', controller.category.list);
   router.get('tags', '/tags/list', controller.tags.list);
-  
+
+  /**
+   * 记录相关
+   */
+   router.post('daily', '/daily/add', authentication, controller.daily.add);
+   router.get('daily', '/daily/list', authentication, controller.daily.list);
 };
