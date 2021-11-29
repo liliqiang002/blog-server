@@ -32,4 +32,6 @@ module.exports = app => {
    */
    router.post('daily', '/daily/add', authentication, controller.daily.add);
    router.get('daily', '/daily/list', authentication, controller.daily.list);
+   router.delete('daily', '/daily/delete/:id', authentication, controller.daily.delete);
+   router.post('daily', '/daily/edit', authentication, controller.daily.edit);
 };
